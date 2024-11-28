@@ -8,3 +8,25 @@ body {
 h1 {
   color: #333;
 }
+
+.bandera {
+  width: 100px;
+}
+
+#countries-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.cuadro-bandera{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  background-color: white;
+  width: 200px;
+  height: 100px;
+}
