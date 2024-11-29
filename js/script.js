@@ -1,5 +1,7 @@
 const listaPaises = document.getElementById('countries-list');
 
+
+//Traemos mediante el async/await la url de las banderas con su información
 const imprimirBanderas = async () =>{
     try {
         const response = await fetch ('https://restcountries.com/v3/all');
@@ -24,6 +26,7 @@ const template = ((paises)=>{
     });
 })
 
+//Aquí hacemos el sort dentro para ordenar las banderas una vez nos las imprima en pantalla
 imprimirBanderas().then((data)=>{
     const paisesOrdenados = data.sort((a, b) =>
          a.name.common.localeCompare(b.name.common));
