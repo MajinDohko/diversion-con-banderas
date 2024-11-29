@@ -24,4 +24,8 @@ const template = ((paises)=>{
     });
 })
 
-imprimirBanderas().then((data)=>template(data));
+imprimirBanderas().then((data)=>{
+    const paisesOrdenados = data.sort((a, b) =>
+         a.name.common.localeCompare(b.name.common));
+        template(paisesOrdenados);
+});
