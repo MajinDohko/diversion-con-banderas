@@ -23,6 +23,10 @@ const template = ((paises)=>{
         <p>${pais.name.common}</p>`
         listaPaises.appendChild(imprimirPais);
         console.log(pais.name.common, pais.flags[0], pais.capital)
+
+        imprimirPais.addEventListener('click',()=>{
+            ventanaEmergente(pais);
+        })
     });
 })
 
@@ -32,3 +36,22 @@ imprimirBanderas().then((data)=>{
          a.name.common.localeCompare(b.name.common));
         template(paisesOrdenados);
 });
+
+
+function ventanaEmergente (pais){
+    const popUp = document.getElementById('popUp');
+    const paisEmergente = document.getElementById('propiedadesPais');
+
+    const imagen = pais.flags[0];
+
+    paisEmergente.innerHTML = `
+    <img class="bandera" src="${imagen}" />
+    <p>${pais.name.common}</p>
+    <p>Capital: ${pais.capital[0]}</p>
+    <p>Población: ${pais.population}</p>`;
+
+    popUp.classList.remove('oculto');
+
+    const popUpBtn = document.getElementById('popUpBtn');
+    popUpBtn.addEventListener('click', ()=>popUp.classList.add('oculto'));
+}

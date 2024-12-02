@@ -27,6 +27,25 @@ h1 {
   text-align: center;
   align-items: center;
   background-color: white;
-  width: 200px;
+  width: 200px; 
   height: 100px;
+}
+
+
+#popUp {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate (-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid rgb(191, 191, 191);
+  border-radius: 10px;
+  z-index: 1;
+  width: 500px;
+  text-align: center;
+}
+
+.oculto {
+  display: none;
 }
